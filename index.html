@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .abc{
+            display: block;
+            width: 610px;
+            height: 350px;
+            margin-top: 10%;
+            margin-left: 26%;
+            
+        }
+        .title{
+        border-radius: 10px;
+        margin-bottom: 10px;
+        text-align:center;
+        width: 590px;
+        font-size: 40px;
+        height: 40px;
+        color:#9a0d1c;
+        padding: 1%;
+        background-color: #e6c0c3;
+        border: solid rgb(62, 7, 7) 4px;
+        }
+        input[type="button"]
+        {
+        border-radius: 10px;
+        background-color:#d74f5d;
+        color: black;
+        width:100%;
+        font-size: 30px;
+        height: 50px;
+        border: #42080e 3px solid;
+        }
+        input[type="text"]
+        {
+        border-radius: 10px;
+        text-align: right;
+        background-color:white;
+        border-color: black ;
+        width:98%;
+        height: 40px;
+        font-size: 30px;
+        border: #42080e 3px solid;
+        }
+        table{
+            border: rgb(62, 7, 7) 4px solid;
+            width: 610px;
+            border-radius: 10px;
+            height: 300px;
+            background-color: #e6c0c3;
+        }
+        </style>
+</head>
+<body >
+    <div class="abc">
+        <div class = title > <strong> Calculator </strong> </div>
+        <table>
+            <tr>
+                <td><input type="button" value="c" onclick="clr()"/> </td>
+                <td colspan="3"><input type="text" id="data"/></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="+" onclick="dis('+')"/> </td>
+                <td><input type="button" value="1" onclick="dis('1')"/> </td>
+                <td><input type="button" value="2" onclick="dis('2')"/> </td>
+                <td><input type="button" value="3" onclick="dis('3')"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="-" onclick="dis('-')"/> </td>
+                <td><input type="button" value="4" onclick="dis('4')"/> </td>
+                <td><input type="button" value="5" onclick="dis('5')"/> </td>
+                <td><input type="button" value="6" onclick="dis('6')"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="*" onclick="dis('*')"/> </td>
+                <td><input type="button" value="7" onclick="dis('7')"/> </td>
+                <td><input type="button" value="8" onclick="dis('8')"/> </td>
+                <td><input type="button" value="9" onclick="dis('9')"/> </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="/" onclick="dis('/')"/> </td>
+                <td><input type="button" value="." onclick="dis('.')"/> </td>
+                <td><input type="button" value="0" onclick="dis('0')"/> </td>
+                <td><input type="button" value="=" onclick="solve()"/> </td>
+            </tr>
+        </table>
+
+    </div>
+        
+    <script>
+        function dis(val)
+        {
+            document.getElementById("data").value+=val
+            }
+        function solve()
+        {
+            let x = document.getElementById("data").value
+            let y = eval(x)
+            document.getElementById("data").value = y
+        }
+        function clr()
+        {
+            document.getElementById("data").value = ""
+        }
+    </script>
+
+</body>
+</html>
